@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #faf9f7;
+  --color-foreground: #1e2a4a;
+  --color-card: #ffffff;
+  --color-card-foreground: #1e2a4a;
+  --color-primary: #293C7C;
+  --color-primary-foreground: #f5f0e8;
+  --color-secondary: #AD7C4B;
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #024944;
+  --color-accent-foreground: #ffffff;
+  --color-destructive: #812B4A;
+  --color-destructive-foreground: #ffffff;
+  --color-muted: #f1f0ed;
+  --color-muted-foreground: #6b7280;
+  --color-border: #e5e2db;
+  --color-input: #e5e2db;
+  --color-ring: #293C7C;
+  --radius: 0.75rem;
+
+  /* Chart palette */
+  --color-chart-1: #024944;
+  --color-chart-2: #C7984F;
+  --color-chart-3: #812B4A;
+  --color-chart-4: #293C7C;
+  --color-chart-5: #AD7C4B;
+
+  /* Royal Glimmer palette tokens */
+  --color-royal-blue: #293C7C;
+  --color-gold: #AD7C4B;
+  --color-light-gold: #C7984F;
+  --color-dark-teal: #024944;
+  --color-burgundy: #812B4A;
+
+  /* Sidebar */
+  --color-sidebar-bg: #293C7C;
+  --color-sidebar-text: #e0ddd5;
+  --color-sidebar-active: #AD7C4B;
+  --color-sidebar-hover: rgba(173, 124, 75, 0.15);
+}
+
+/* Base styles */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4c0b8;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a09c94;
+}
+
+/* Smooth transitions for sidebar */
+.sidebar-transition {
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(41, 60, 124, 0.1), 0 4px 10px -5px rgba(41, 60, 124, 0.05);
+}
+
+/* Animate number counters */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-count {
+  animation: countUp 0.5s ease-out forwards;
+}
+
+/* Upload dropzone animation */
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(173, 124, 75, 0.3); }
+  50% { border-color: rgba(173, 124, 75, 0.8); }
+}
+.dropzone-active {
+  animation: pulse-border 1.5s ease-in-out infinite;
+}
+
+/* Badge styles */
+.status-badge {
+  @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium;
+}
+
+/* Table styles */
+.table-header {
+  background: linear-gradient(135deg, #293C7C 0%, #1e2d5e 100%);
+}
+
